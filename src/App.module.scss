@@ -1,0 +1,19 @@
+.app {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--primary-95);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+
+.content {
+    flex: 1 1 auto;
+    padding: 1.2rem;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
