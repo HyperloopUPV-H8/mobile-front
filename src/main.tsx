@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Vehicle } from "pages/Vehicle/Vehicle.tsx";
 import { Levitation } from "pages/Vehicle/Levitation/Levitation.tsx";
+import { Propulsion } from "pages/Vehicle/Propulsion/Propulsion.tsx";
 
 //TODO: make /vehicle/levitation appear on / route.
 const router = createBrowserRouter([
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: "propulsion",
-                        element: <div>Propulsion</div>,
+                        element: <Propulsion />,
                     },
                     {
                         path: "power",

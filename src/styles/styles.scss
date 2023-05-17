@@ -13,6 +13,16 @@ body {
     margin: 0;
 }
 
+// Chrome
+*::-webkit-scrollbar {
+    display: none;
+}
+
+// Firefox
+* {
+    scrollbar-width: none;
+}
+
 :root {
     font-family: var(--font-sans);
     color: var(--secondary-30);
