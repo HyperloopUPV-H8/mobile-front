@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import { Vehicle } from "pages/Vehicle/Vehicle.tsx";
 import { Levitation } from "pages/Vehicle/Levitation/Levitation.tsx";
+import {Power} from "./pages/Vehicle/view/Power/Power.tsx";
 
 //TODO: make /vehicle/levitation appear on / route.
 const router = createBrowserRouter([
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: "power",
-                        element: <div>Power</div>,
+                        element: <Power />,
                     },
                 ],
             },
