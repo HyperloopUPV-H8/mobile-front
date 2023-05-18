@@ -7,7 +7,7 @@ export class Tag {
     private readonly type: TagType
     private readonly name: string | null
 
-    protected constructor(value: TagValue, type: TagType, name: string | null) {
+    private constructor(value: TagValue, type: TagType, name: string | null) {
         if (name == undefined || name.length === 0) new Error("Name must not be undefined or empty");
         if (type == undefined) new Error("Type must not be undefined");
         this.name = name;
@@ -15,8 +15,8 @@ export class Tag {
         this.value = value;
     }
 
-    static withValue(value: TagValue): WithType {
-        return new WithType(value);
+    static withValue(value: TagValue) {
+        return new Tag.WithType(value);
     }
 
     getName = () => this.name
@@ -26,31 +26,31 @@ export class Tag {
     getType = () => this.type
 
     getStringValue = () => this.value.getStringValue()
-}
 
-class WithType {
+    static WithType = class {
 
-    private readonly value: TagValue
+        private readonly value: TagValue
 
-    constructor(value: TagValue) {
-        this.value = value;
+        constructor(value: TagValue) {
+            this.value = value;
+        }
+
+        withType = (type: TagType) => new Tag.Builder(this.value, type)
+
     }
 
-    withType = (type: TagType) => new Builder(this.value, type)
+    static Builder = class {
 
-}
+        private readonly value: TagValue
+        private readonly type: TagType
 
-class Builder {
+        constructor(value: TagValue, type: TagType) {
+            this.value = value;
+            this.type = type;
+        }
 
-    private readonly value: TagValue
-    private readonly type: TagType
+        build = () => new Tag(this.value, this.type, null)
 
-    constructor(value: TagValue, type: TagType) {
-        this.value = value;
-        this.type = type;
+        withName = (name: string) => new Tag(this.value, this.type, name)
     }
-
-    build = () => new Tag(this.value, this.type, null)
-
-    withName = (name: string) => new Tag(this.value, this.type, name)
 }
