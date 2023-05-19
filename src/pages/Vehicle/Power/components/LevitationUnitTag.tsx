@@ -1,32 +1,22 @@
-import {Tag} from "../models/Tag.ts";
 import {TagType} from "../models/TagType.ts";
+import {ReactComponent as EMSIcon} from "assets/icons/ems.svg";
+import {ReactComponent as HEMSIcon} from "assets/icons/hems.svg";
 
-type Props = {tag: Tag}
+type Props = {value: number, name: string, type: TagType}
 
 export const LevitationUnitTag = (props: Props) => {
 
-    const tag = props.tag
+    const getIcon = () => props.type === TagType.HEMS ? <HEMSIcon className={'lev-icon'} /> : <EMSIcon className={'lev-icon'} />
 
-    const levitationUnitTagTypes = new Set([TagType.HEMS, TagType.EMS])
-
-    const isNotLevitationUnitTag = () => !levitationUnitTagTypes.has(tag.getType())
-
-    const renderTag = () => {
-        if (isNotLevitationUnitTag()) throw new Error('Tag is not a levitation unit tag')
-        return renderLevitationUnitTag()
-    }
-
-    const getIcon = () => tag.getType() === TagType.HEMS ? 'hems-icon' : 'ems-icon'
-
-    const renderLevitationUnitTag = () => (
+    return (
         <div className={'levitation-unit-tag'}>
-            <h3>{tag.getName()}</h3>
+            <span>
+                {getIcon()}
+            </span>
             <div>
-                <span>{getIcon()}</span>
-                <p>{tag.getStringValue()}</p>
+                <h3>{props.name}</h3>
+                <p>{props.value} W</p>
             </div>
         </div>
     )
-
-    return (renderTag())
 }

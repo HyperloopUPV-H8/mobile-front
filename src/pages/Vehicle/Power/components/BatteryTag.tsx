@@ -1,28 +1,16 @@
-import {Tag} from "../models/Tag.ts";
-import {TagType} from "../models/TagType.ts";
+import {ReactComponent as Thunder} from "assets/icons/thunder.svg";
 
-type Props = {tag: Tag}
+type Props = {name: string, value: number}
 
 export const BatteryTag = (props: Props) => {
 
-    const tag = props.tag
-
-    const isNotBatteryTag = () => tag.getType() !== TagType.BATTERY
-
-    const renderTag = () => {
-        if (isNotBatteryTag()) throw new Error('Tag is not a battery tag')
-        return renderBatteryTag()
-    }
-
-    const renderBatteryTag = () => (
+    return (
         <div className={'battery-tag'}>
-            <h3>{tag.getName()}</h3>
+            <h3>{props.name}</h3>
             <div>
-                <span>icon</span>
-                <p>{tag.getStringValue()}</p>
+                <Thunder />
+                <p>{props.value} W</p>
             </div>
         </div>
     )
-
-    return (renderTag())
 }
