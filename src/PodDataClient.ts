@@ -1,10 +1,9 @@
-import {PowerState} from "./pages/Vehicle/view/Power/state/PowerState.ts";
-import {TextSection} from "./pages/Vehicle/view/Power/models/TextSection.ts";
-import {ActionGenerator} from "./pages/Vehicle/view/Power/state/ActionGenerator.ts";
-import {TagSection} from "./pages/Vehicle/view/Power/models/TagSection.ts";
-import {Tag} from "./pages/Vehicle/view/Power/models/Tag.ts";
-import {TagValue} from "./pages/Vehicle/view/Power/models/TagValue.ts";
-import {TagType} from "./pages/Vehicle/view/Power/models/TagType.ts";
+import {PowerState} from "./pages/Vehicle/Power/models/PowerState.ts";
+import {TextSection} from "./pages/Vehicle/Power/models/TextSection.ts";
+import {TagSection} from "./pages/Vehicle/Power/models/TagSection.ts";
+import {Tag} from "./pages/Vehicle/Power/models/Tag.ts";
+import {TagValue} from "./pages/Vehicle/Power/models/TagValue.ts";
+import {TagType} from "./pages/Vehicle/Power/models/TagType.ts";
 
 export class PodDataClient {
 
@@ -17,7 +16,7 @@ export class PodDataClient {
         // const powerData = powerDataMapper.map(clientRawData)
 
         const powerData = await this.mockedData()
-        ActionGenerator.displayVehiclePower(powerData)
+        return Promise.resolve(powerData)
     }
 
     private mockedData = async (): Promise<PowerState> => {

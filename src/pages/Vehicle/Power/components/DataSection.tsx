@@ -28,12 +28,16 @@ export const DataSection = (props: Props) => {
 
     const renderTextSection = (section: TextSection) => (<TextDataSection section={section} />)
 
-    const renderTagSection = (section: TagSection) => section.getTags().map((it, index) => renderTag(it, index))
+    const renderTagSection = (section: TagSection) => (
+        <div className={'tag-grid'}>
+            {section.getTags().map((it, index) => renderTag(it, index))}
+        </div>
+    )
 
     const renderTag = (tag: Tag, index: number) => tagComponentMapping.get(tag.getType())?.(tag, index)
 
     return (
-        <section>
+        <section className={'data-section'}>
             <h2>{section.getTitle()}</h2>
             {renderTags()}
         </section>

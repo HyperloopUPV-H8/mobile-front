@@ -1,6 +1,5 @@
 import {Tag} from "../models/Tag.ts";
 import {TagType} from "../models/TagType.ts";
-import '../styles/BatteryTag.scss'
 
 type Props = {tag: Tag}
 

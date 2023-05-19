@@ -7,7 +7,7 @@ export const TextDataSection = (props: Props) => {
     const section = props.section
 
     return (
-        <section>
+        <section className={'text-section'}>
             <p>{section.getInfoText()}</p>
         </section>
     )

@@ -1,4 +1,4 @@
-import {ContentSection} from "../models/ContentSection.ts";
+import {ContentSection} from "./ContentSection.ts";
 
 export class PowerState {
 
