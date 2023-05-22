@@ -1,0 +1,116 @@
+.power-section {
+  overflow-x: hidden;
+}
+.data-section {
+  margin-bottom: 1.8rem;
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 .8rem 0;
+  }
+
+  .text-section {
+    display: flex;
+    align-items: center;
+    background-color: var(--tag-99);
+    padding: 0.6rem 1rem;
+    border-radius: 0.375rem;
+
+    p {
+      margin: 0;
+      color: var(--secondarytext-65);
+      font-size: .95rem;
+    }
+  }
+
+  .tag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-gap: 1rem;
+
+    width: 100%;
+
+    div {
+      padding: 0.6rem 1rem;
+      border-radius: 0.375rem;
+    }
+
+    .battery-tag {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      border-radius: 0.375rem;
+
+      h3 {
+        margin: 0 0 .6rem 0;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+
+      p {
+        margin: 0 0 0 .8rem;
+        font-weight: 600;
+        font-size: 1.4rem;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        background-color: var(--tag-99);
+      }
+    }
+
+    .levitation-unit-tag {
+      display: flex;
+      align-items: center;
+      min-width: 5rem;
+      padding: 0.4rem .8rem;
+      background-color: var(--tag-99);
+
+      span {
+        display: flex;
+        align-items: center;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin-left: .5rem;
+
+        h3 {
+          margin: 0 0 .1rem 0;
+          font-size: .75rem;
+          font-weight: 500;
+          color: var(--secondarytext-65);
+        }
+
+        p {
+          margin: 0;
+          font-size: 1.4rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .motor-tag {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--tag-99);
+      padding: 1rem;
+
+      .motor-icon {
+        width: 13rem;
+      }
+
+      p {
+        margin: 0 1.8rem 0 0;
+        font-weight: 600;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+}

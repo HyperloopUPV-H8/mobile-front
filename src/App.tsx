@@ -16,9 +16,9 @@ const dockItems: DockItemData[] = [
 function App() {
     return (
         <div className={styles.app}>
-            <div className={styles.content}>
+            <main className={styles.content}>
                 <Outlet />
-            </div>
+            </main>
             <Dock items={dockItems} />
         </div>
     );

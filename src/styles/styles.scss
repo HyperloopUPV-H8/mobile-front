@@ -11,10 +11,12 @@
 
 body {
     margin: 0;
+    padding: 0;
+    color: var(--text-30);
 }
 
 :root {
     font-family: var(--font-sans);
     color: var(--secondary-30);
-    font-size: 16px;
+    font-size: 16px; // should be 10px
 }
