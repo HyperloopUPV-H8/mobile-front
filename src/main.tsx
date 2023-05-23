@@ -40,7 +40,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "tube",
-                element: <div>Hello</div>,
+                element: <Tube />,
             },
             {
                 path: "cameras",
