@@ -1,10 +1,16 @@
+import "common/dist/style.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+    createBrowserRouter,
+    Navigate,
+    RouterProvider,
+} from "react-router-dom";
 import { Vehicle } from "pages/Vehicle/Vehicle.tsx";
 import { Levitation } from "pages/Vehicle/Levitation/Levitation.tsx";
 import { Propulsion } from "pages/Vehicle/Propulsion/Propulsion.tsx";
+import { GlobalTicker } from "common";
 
 //TODO: make /vehicle/levitation appear on / route.
 const router = createBrowserRouter([
@@ -12,10 +18,12 @@ const router = createBrowserRouter([
         path: "/",
         element: <App />,
         children: [
+            { path: "", element: <Navigate to={"vehicle"} /> },
             {
                 path: "vehicle",
                 element: <Vehicle />,
                 children: [
+                    { path: "", element: <Navigate to={"levitation"} /> },
                     {
                         path: "levitation",
                         element: <Levitation />,
@@ -40,10 +48,13 @@ const router = createBrowserRouter([
             },
         ],
     },
+    { path: "*", element: <Navigate to={"/"} /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
-        <RouterProvider router={router}></RouterProvider>
+        <GlobalTicker>
+            <RouterProvider router={router}></RouterProvider>
+        </GlobalTicker>
     </React.StrictMode>
 );
