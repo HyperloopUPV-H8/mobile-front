@@ -12,7 +12,9 @@ export const Vehicle = () => {
                     { label: "Power", path: "power" },
                 ]}
             />
-            <Outlet />
+            <div className={styles.content}>
+                <Outlet />
+            </div>
         </div>
     );
 };

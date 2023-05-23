@@ -10,7 +10,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "common": "npm:@hyperloop-upv/common-front@^2.0.2",
+        "common": "file:../common-front",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.11.1",
