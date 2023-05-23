@@ -1,6 +1,6 @@
-import { Tabs } from "components/Tabs/Tabs";
+import {Tabs} from "components/Tabs/Tabs";
 import styles from "./Vehicle.module.scss";
-import { Outlet } from "react-router-dom";
+import {Outlet} from "react-router-dom";
 
 export const Vehicle = () => {
     return (
