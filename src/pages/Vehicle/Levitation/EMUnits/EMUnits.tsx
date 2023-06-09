@@ -1,5 +1,6 @@
 import { Article } from "components/Article/Article";
 import styles from "./EMUnits.module.scss";
+import React from "react";
 
 type Props = {
     title: string;
@@ -15,8 +16,8 @@ export const EMUnits = ({ title, body, units }: Props) => {
                 body={body}
             />
             <div className={styles.tags}>
-                {units.map((unit) => {
-                    return unit;
+                {units.map((unit, index) => {
+                    return <React.Fragment key={index}>{unit}</React.Fragment>;
                 })}
             </div>
         </div>

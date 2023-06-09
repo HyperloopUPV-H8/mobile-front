@@ -11,9 +11,11 @@ import {
 } from "react-router-dom";
 import { Vehicle } from "pages/Vehicle/Vehicle.tsx";
 import { Levitation } from "pages/Vehicle/Levitation/Levitation.tsx";
-import { Propulsion } from "pages/Vehicle/Propulsion/Propulsion.tsx";
-import { GlobalTicker } from "common";
 import { Tube } from "pages/Tube/Tube.tsx";
+import { Power } from "pages/Vehicle/Power/Power.tsx";
+import { CamerasPage } from "pages/CamerasPage/CamerasPage.tsx";
+import { Provider } from "react-redux";
+import { store } from "store.ts";
 
 const router = createBrowserRouter([
     {
@@ -46,7 +48,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "cameras",
-                element: <div>Cameras</div>,
+                element: <CamerasPage />,
             },
         ],
     },
@@ -55,8 +57,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
-        <GlobalTicker>
-            <RouterProvider router={router}></RouterProvider>
-        </GlobalTicker>
+        <Provider store={store}>
+            <GlobalTicker>
+                <RouterProvider router={router}></RouterProvider>
+            </GlobalTicker>
+        </Provider>
     </React.StrictMode>
 );

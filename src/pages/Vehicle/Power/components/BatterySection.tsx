@@ -1,15 +1,13 @@
+import { Title } from "components/Title/Title";
 
 type Props = {
-    tags: [React.ReactNode, React.ReactNode]
-}
+    tags: [React.ReactNode, React.ReactNode];
+};
 export const BatterySection = (props: Props) => {
-
     return (
-        <section className={'data-section'}>
-            <h2>Battery Packs</h2>
-            <div className={'tag-grid'}>
-                {props.tags.map(it => it)}
-            </div>
+        <section className={"data-section"}>
+            <Title title="Battery Packs" />
+            <div className={"tag-grid"}>{props.tags.map((it) => it)}</div>
         </section>
-    )
-}
+    );
+};
