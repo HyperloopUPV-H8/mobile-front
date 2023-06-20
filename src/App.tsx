@@ -11,7 +11,7 @@ import {
     WsHandlerProvider,
     config,
     createWsHandler,
-    fetchFromBackend,
+    fetchBack,
 } from "common";
 import { useDispatch } from "react-redux";
 import { initPodData } from "slices/podDataSlice";
@@ -19,7 +19,7 @@ import { initMeasurements } from "slices/measurementsSlice";
 
 const dockItems: DockItemData[] = [
     { icon: <Wheel />, path: "/vehicle" },
-    { icon: <Tube />, path: "/tube" },
+    // { icon: <Tube />, path: "/tube" },
     { icon: <Camera />, path: "/cameras" },
 ];
 
@@ -33,12 +33,10 @@ function App() {
             LoadingView={<div>Loading</div>}
             promises={[
                 createWsHandler(SERVER_URL),
-                fetchFromBackend(config.paths.podDataDescription)
-                    .then((res) => res.json())
-                    .then((adapter) => {
-                        dispatch(initPodData(adapter));
-                        dispatch(initMeasurements(adapter));
-                    }),
+                fetchBack(config.paths.podDataDescription).then((adapter) => {
+                    dispatch(initPodData(adapter));
+                    dispatch(initMeasurements(adapter));
+                }),
             ]}
         >
             {([handler]) => (
@@ -47,7 +45,7 @@ function App() {
                         <main className={styles.content}>
                             <Outlet />
                         </main>
-                        <Dock items={dockItems} />
+                        {/* <Dock items={dockItems} /> */}
                     </div>
                 </WsHandlerProvider>
             )}

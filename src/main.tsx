@@ -58,7 +58,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
         <Provider store={store}>
-            <GlobalTicker>
+            <GlobalTicker fps={20}>
                 <RouterProvider router={router}></RouterProvider>
             </GlobalTicker>
         </Provider>
