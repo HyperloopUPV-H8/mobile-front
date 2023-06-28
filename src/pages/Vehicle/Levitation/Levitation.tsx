@@ -1,15 +1,9 @@
-import {
-    ColorfulChart,
-    LineDescription,
-    selectLcuMeasurements,
-    isNumericMeasurement,
-} from "common";
+import { ColorfulChart, selectLcuMeasurements } from "common";
 import { EMS } from "./EMS/EMS";
 import { HEMS } from "./HEMS/HEMS";
 import styles from "./Levitation.module.scss";
 import { useMeasurements } from "hooks/useMeasurements";
 import { useMemo } from "react";
-import { store } from "store";
 import { getLines } from "../getLines";
 
 export const Levitation = () => {

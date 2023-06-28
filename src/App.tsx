@@ -28,6 +28,9 @@ const SERVER_URL = import.meta.env.PROD
     : `${config.devServer.ip}:${config.devServer.port}/${config.paths.websocket}`;
 
 function App() {
+    console.log("SERVER_URL", SERVER_URL);
+    console.log("import.meta.env.PROD", import.meta.env.PROD);
+
     const dispatch = useDispatch();
 
     return (
