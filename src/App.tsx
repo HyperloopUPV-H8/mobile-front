@@ -19,11 +19,13 @@ import { initMeasurements } from "slices/measurementsSlice";
 
 const dockItems: DockItemData[] = [
     { icon: <Wheel />, path: "/vehicle" },
-    // { icon: <Tube />, path: "/tube" },
+    { icon: <Tube />, path: "/tube" },
     { icon: <Camera />, path: "/cameras" },
 ];
 
-const SERVER_URL = `${config.server.ip}:${config.server.port}/${config.paths.websocket}`;
+const SERVER_URL = import.meta.env.PROD
+    ? `${config.prodServer.ip}:${config.prodServer.port}/${config.paths.websocket}`
+    : `${config.devServer.ip}:${config.devServer.port}/${config.paths.websocket}`;
 
 function App() {
     const dispatch = useDispatch();
@@ -31,9 +33,13 @@ function App() {
     return (
         <Loader
             LoadingView={<div>Loading</div>}
+            FailureView={<div>Failure</div>}
             promises={[
                 createWsHandler(SERVER_URL),
-                fetchBack(config.paths.podDataDescription).then((adapter) => {
+                fetchBack(
+                    import.meta.env.PROD,
+                    config.paths.podDataDescription
+                ).then((adapter) => {
                     dispatch(initPodData(adapter));
                     dispatch(initMeasurements(adapter));
                 }),
@@ -45,7 +51,7 @@ function App() {
                         <main className={styles.content}>
                             <Outlet />
                         </main>
-                        {/* <Dock items={dockItems} /> */}
+                        <Dock items={dockItems} />
                     </div>
                 </WsHandlerProvider>
             )}

@@ -8,7 +8,7 @@ export const Vehicle = () => {
             <Tabs
                 items={[
                     { label: "Levitation", path: "levitation" },
-                    // { label: "Propulsion", path: "propulsion" },
+                    { label: "Propulsion", path: "propulsion" },
                     { label: "Power", path: "power" },
                 ]}
             />
