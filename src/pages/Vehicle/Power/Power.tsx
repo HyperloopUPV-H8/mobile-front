@@ -18,7 +18,7 @@ export const Power = () => {
             <BatterySection
                 tags={[
                     <BatteryTag
-                        name={"High voltage pack - 220 V"}
+                        name={"High voltage pack - 75 V"}
                         value={pcuData.acceleration.value.average}
                     />,
                     <BatteryTag

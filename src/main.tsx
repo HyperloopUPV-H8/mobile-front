@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import { Propulsion } from "pages/Vehicle/Propulsion/Propulsion.tsx";
-import { GlobalTicker } from "common";
+import { ConfigProvider, GlobalTicker } from "common";
 import {
     createBrowserRouter,
     Navigate,
@@ -58,9 +58,14 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
         <Provider store={store}>
-            <GlobalTicker fps={20}>
-                <RouterProvider router={router}></RouterProvider>
-            </GlobalTicker>
+            <ConfigProvider
+                devIp="127.0.0.1"
+                prodIp="192.168.0.9"
+            >
+                <GlobalTicker fps={20}>
+                    <RouterProvider router={router}></RouterProvider>
+                </GlobalTicker>
+            </ConfigProvider>
         </Provider>
     </React.StrictMode>
 );

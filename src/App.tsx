@@ -9,9 +9,9 @@ import { DockItemData } from "components/Dock/DockItem/DockItem";
 import {
     Loader,
     WsHandlerProvider,
-    config,
     createWsHandler,
-    fetchBack,
+    useConfig,
+    useFetchBack,
 } from "common";
 import { useDispatch } from "react-redux";
 import { initPodData } from "slices/podDataSlice";
@@ -23,26 +23,24 @@ const dockItems: DockItemData[] = [
     { icon: <Camera />, path: "/cameras" },
 ];
 
-const SERVER_URL = import.meta.env.PROD
-    ? `${config.prodServer.ip}:${config.prodServer.port}/${config.paths.websocket}`
-    : `${config.devServer.ip}:${config.devServer.port}/${config.paths.websocket}`;
-
 function App() {
-    console.log("SERVER_URL", SERVER_URL);
-    console.log("import.meta.env.PROD", import.meta.env.PROD);
+    const config = useConfig();
+    const podDataDescriptionPromise = useFetchBack(
+        import.meta.env.PROD,
+        config.paths.podDataDescription
+    );
+    const SERVER_URL = import.meta.env.PROD
+        ? `${config.prodServer.ip}:${config.prodServer.port}/${config.paths.websocket}`
+        : `${config.devServer.ip}:${config.devServer.port}/${config.paths.websocket}`;
 
     const dispatch = useDispatch();
-
     return (
         <Loader
             LoadingView={<div>Loading</div>}
             FailureView={<div>Failure</div>}
             promises={[
-                createWsHandler(SERVER_URL),
-                fetchBack(
-                    import.meta.env.PROD,
-                    config.paths.podDataDescription
-                ).then((adapter) => {
+                createWsHandler(SERVER_URL, true),
+                podDataDescriptionPromise.then((adapter) => {
                     dispatch(initPodData(adapter));
                     dispatch(initMeasurements(adapter));
                 }),
