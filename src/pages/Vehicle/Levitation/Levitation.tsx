@@ -27,7 +27,7 @@ export const Levitation = () => {
                     "LCU_MASTER/lcu_master_current_coil_hems_1",
                     "LCU_SLAVE/lcu_slave_real_coil_current_hems_2",
                     "LCU_MASTER/lcu_master_current_coil_hems_3",
-                    "LCU_MASTER/lcu_slave_real_coil_current_hems_4",
+                    "LCU_SLAVE/lcu_slave_real_coil_current_hems_4",
                 ])}
                 length={100}
             />
@@ -43,7 +43,7 @@ export const Levitation = () => {
                     "LCU_MASTER/lcu_master_current_coil_ems_1",
                     "LCU_SLAVE/lcu_slave_real_coil_current_ems_2",
                     "LCU_MASTER/lcu_master_current_coil_ems_3",
-                    "LCU_MASTER/lcu_slave_real_coil_current_ems_4",
+                    "LCU_SLAVE/lcu_slave_real_coil_current_ems_4",
                 ])}
                 length={100}
             />
