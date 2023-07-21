@@ -3,7 +3,7 @@ import styles from "./CamerasPage.module.scss";
 import { Cameras } from "./Cameras/Cameras";
 
 export const CamerasPage = () => {
-    const [streams] = useWebRTC("ws://192.168.0.9:4040");
+    const [streams] = useWebRTC("ws://192.168.0.10:4040");
 
     return (
         <div className={styles.camerasPage}>
