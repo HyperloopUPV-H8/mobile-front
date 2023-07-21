@@ -24,10 +24,10 @@ export const Levitation = () => {
             <ColorfulChart
                 title="HEMS currents"
                 items={getLines([
-                    "LCU_MASTER/current_coil_1",
-                    "LCU_MASTER/current_coil_2",
-                    "LCU_MASTER/current_coil_3",
-                    "LCU_MASTER/current_coil_4",
+                    "LCU_MASTER/lcu_master_current_coil_hems_1",
+                    "LCU_SLAVE/lcu_slave_real_coil_current_hems_2",
+                    "LCU_MASTER/lcu_master_current_coil_hems_3",
+                    "LCU_MASTER/lcu_slave_real_coil_current_hems_4",
                 ])}
                 length={100}
             />
@@ -40,10 +40,10 @@ export const Levitation = () => {
             <ColorfulChart
                 title="EMS currents"
                 items={getLines([
-                    "LCU_MASTER/slave_current_coil_5",
-                    "LCU_MASTER/slave_current_coil_6",
-                    "LCU_MASTER/slave_current_coil_7",
-                    "LCU_MASTER/slave_current_coil_8",
+                    "LCU_MASTER/lcu_master_current_coil_ems_1",
+                    "LCU_SLAVE/lcu_slave_real_coil_current_ems_2",
+                    "LCU_MASTER/lcu_master_current_coil_ems_3",
+                    "LCU_MASTER/lcu_slave_real_coil_current_ems_4",
                 ])}
                 length={100}
             />
