@@ -19,11 +19,11 @@ export const Power = () => {
                 tags={[
                     <BatteryTag
                         name={"High voltage pack - 75 V"}
-                        value={pcuData.acceleration.value.average}
+                        value={pcuData.accel.value.average}
                     />,
                     <BatteryTag
                         name={"Low voltage pack - 24 V"}
-                        value={pcuData.acceleration.value.average}
+                        value={pcuData.accel.value.average}
                     />,
                 ]}
             />
@@ -31,42 +31,42 @@ export const Power = () => {
             <LevitationSection
                 tags={[
                     <LevitationUnitTag
-                        value={pcuData.acceleration.value.average}
+                        value={pcuData.accel.value.average}
                         name={"HEMS 1"}
                         type={TagType.HEMS}
                     />,
                     <LevitationUnitTag
-                        value={pcuData.acceleration.value.average}
+                        value={pcuData.accel.value.average}
                         name={"HEMS 2"}
                         type={TagType.HEMS}
                     />,
                     <LevitationUnitTag
-                        value={pcuData.acceleration.value.average}
+                        value={pcuData.accel.value.average}
                         name={"HEMS 3"}
                         type={TagType.HEMS}
                     />,
                     <LevitationUnitTag
-                        value={pcuData.acceleration.value.average}
+                        value={pcuData.accel.value.average}
                         name={"HEMS 4"}
                         type={TagType.HEMS}
                     />,
                     <LevitationUnitTag
-                        value={pcuData.acceleration.value.average}
+                        value={pcuData.accel.value.average}
                         name={"EMS 1"}
                         type={TagType.EMS}
                     />,
                     <LevitationUnitTag
-                        value={pcuData.acceleration.value.average}
+                        value={pcuData.accel.value.average}
                         name={"EMS 2"}
                         type={TagType.EMS}
                     />,
                     <LevitationUnitTag
-                        value={pcuData.acceleration.value.average}
+                        value={pcuData.accel.value.average}
                         name={"EMS 3"}
                         type={TagType.EMS}
                     />,
                     <LevitationUnitTag
-                        value={pcuData.acceleration.value.average}
+                        value={pcuData.accel.value.average}
                         name={"EMS 4"}
                         type={TagType.EMS}
                     />,

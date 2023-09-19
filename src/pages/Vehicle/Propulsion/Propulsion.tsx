@@ -19,7 +19,7 @@ export const Propulsion = () => {
             <Title title="Propulsion ON" />
             <DoubleGauge
                 firstGauge={propulData.velocity}
-                secondGauge={propulData.acceleration}
+                secondGauge={propulData.accel}
             />
             <Text text="These are the currents inside the vehicle's motor. Together, they propulse Kénos." />
             <ColorfulChart
@@ -27,9 +27,9 @@ export const Propulsion = () => {
                 title="Motor 1"
                 length={100}
                 items={getLines([
-                    propulData.motor_1_current_u.id,
-                    propulData.motor_1_current_v.id,
-                    propulData.motor_1_current_w.id,
+                    propulData.motor_a_current_u.id,
+                    propulData.motor_a_current_v.id,
+                    propulData.motor_a_current_w.id,
                 ])}
             ></ColorfulChart>
             <ColorfulChart
@@ -37,9 +37,9 @@ export const Propulsion = () => {
                 title="Motor 2"
                 length={100}
                 items={getLines([
-                    propulData.motor_2_current_u.id,
-                    propulData.motor_2_current_v.id,
-                    propulData.motor_2_current_w.id,
+                    propulData.motor_b_current_u.id,
+                    propulData.motor_b_current_v.id,
+                    propulData.motor_b_current_w.id,
                 ])}
             ></ColorfulChart>
         </div>
