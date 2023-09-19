@@ -3,42 +3,39 @@ import { EMUnits } from "../EMUnits/EMUnits";
 import { ImageTag } from "../ImageTag/ImageTag";
 import emsUrl from "assets/images/EMS.png";
 
-const mockMeas: NumericMeasurement = {
-    id: "m1",
-    name: "Meas 1",
-    safeRange: [10, 20],
-    type: "uint8",
-    units: "A",
-    value: { average: 12, last: 12 },
-    warningRange: [10, 20],
+type Props = {
+    m1: NumericMeasurement;
+    m2: NumericMeasurement;
+    m3: NumericMeasurement;
+    m4: NumericMeasurement;
 };
 
 const IMAGE_WIDTH = "7rem";
 
-export const EMS = () => {
+export const EMS = ({ m1, m2, m3, m4 }: Props) => {
     return (
         <EMUnits
             title="EMS Units"
-            body="The EMS are electromagnets that keep Kénos centered laterally."
+            body="The EMS are electromagnets that keep Kénos centered horizontally."
             units={[
                 <ImageTag
                     imageUrl={emsUrl}
-                    measurement={mockMeas}
+                    measurement={m1}
                     width={IMAGE_WIDTH}
                 />,
                 <ImageTag
                     imageUrl={emsUrl}
-                    measurement={mockMeas}
+                    measurement={m2}
                     width={IMAGE_WIDTH}
                 />,
                 <ImageTag
                     imageUrl={emsUrl}
-                    measurement={mockMeas}
+                    measurement={m3}
                     width={IMAGE_WIDTH}
                 />,
                 <ImageTag
                     imageUrl={emsUrl}
-                    measurement={mockMeas}
+                    measurement={m4}
                     width={IMAGE_WIDTH}
                 />,
             ]}

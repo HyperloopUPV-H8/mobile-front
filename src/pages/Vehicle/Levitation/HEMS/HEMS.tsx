@@ -3,19 +3,16 @@ import hemsUrl from "assets/images/HEMS.png";
 import { NumericMeasurement } from "common";
 import { EMUnits } from "../EMUnits/EMUnits";
 
-const mockMeas: NumericMeasurement = {
-    id: "m1",
-    name: "Meas 1",
-    safeRange: [10, 20],
-    type: "uint8",
-    units: "A",
-    value: { average: 12, last: 12 },
-    warningRange: [10, 20],
-};
-
 const IMAGE_WIDTH = "7rem";
 
-export const HEMS = () => {
+type Props = {
+    m1: NumericMeasurement;
+    m2: NumericMeasurement;
+    m3: NumericMeasurement;
+    m4: NumericMeasurement;
+};
+
+export const HEMS = ({ m1, m2, m3, m4 }: Props) => {
     return (
         <EMUnits
             title="HEMS Units"
@@ -23,22 +20,22 @@ export const HEMS = () => {
             units={[
                 <ImageTag
                     imageUrl={hemsUrl}
-                    measurement={mockMeas}
+                    measurement={m1}
                     width={IMAGE_WIDTH}
                 />,
                 <ImageTag
                     imageUrl={hemsUrl}
-                    measurement={mockMeas}
+                    measurement={m2}
                     width={IMAGE_WIDTH}
                 />,
                 <ImageTag
                     imageUrl={hemsUrl}
-                    measurement={mockMeas}
+                    measurement={m3}
                     width={IMAGE_WIDTH}
                 />,
                 <ImageTag
                     imageUrl={hemsUrl}
-                    measurement={mockMeas}
+                    measurement={m4}
                     width={IMAGE_WIDTH}
                 />,
             ]}

@@ -3,10 +3,11 @@
 @use "/src/assets/fonts/Inter/Inter.scss";
 @use "/src/assets/fonts/Consolas/Consolas.scss";
 @use "/src/assets/fonts/NotoColorEmoji/NotoColorEmoji.scss";
+@use "/src/assets/fonts/JetBrainsMono/JetBrainsMono.css";
 
 $font-families: (
     sans: "Inter",
-    mono: "IBM Plex Mono, monospace",
+    mono: "JetBrains Mono, monospace",
 );
 
 @mixin fonts {
